@@ -1,18 +1,28 @@
-const player1 = {
-    nome: 'Mario',
-    velocidade: 4,
-    manobrabilidade: 3,
-    poder: 3,
-    pontos: 0
-};
+const readline = require("readline");
 
-const player2 = {
-    nome: 'Luigi',
-    velocidade: 3, 
-    manobrabilidade: 4,
-    poder: 4,
-    pontos: 0
-};
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+class Player {
+    constructor(nome, velocidade, manobrabilidade, poder) {
+        this.nome = nome,
+        this.velocidade = velocidade,
+        this.manobrabilidade = manobrabilidade,
+        this.poder = poder,
+        this.pontos = 0
+    };
+}
+
+const characters = [
+    new Player('Mario', 4, 3, 3),
+    new Player('Luigi', 3, 4, 4),
+    new Player('Bowser', 5, 2, 5),
+    new Player('Peach', 3, 4, 2),
+    new Player('Yoshi', 2, 4, 3),
+    new Player('Donkey Kong', 2, 2, 5)
+];
 
 async function rollDice() {
     return Math.floor(Math.random() * 6) + 1;
@@ -39,7 +49,7 @@ async function logRollResult(characterName, block, diceResult, attribute) {
 }
 
 async function playRaceEngine(character1, character2) {
-    for (let round = 0; round <= 5;round++) {
+    for (let round = 1; round <= 5;round++) {
         console.log(`🏁 Rodada ${round}`);
         
         let block = await getRandomBlock();
@@ -149,11 +159,46 @@ async function declareWinner(character1, character2) {
     }
 }
 
-(async function main() {
-    console.log(`🏁🚨 Corrida entre ${player1.nome} e ${player2.nome} começando...\n`);
+function showCharacters() {
+    console.log('\nEscolha seu personagem:');
+    characters.forEach((char, index) => {
+        console.log(`${index + 1} - ${char.nome} (Velocidade: ${char.velocidade}, Manobrabilidade: ${char.manobrabilidade}, Poder: ${char.poder})`);    
+    });
+}
 
-    await playRaceEngine(player1, player2);
-    await declareWinner(player1, player2);
+function selectCharacters() {
+    showCharacters();
+
+    rl.question('\nEscolha o primeiro jogador (1-6): ', (answer1) => {
+        let index1 = parseInt(answer1) - 1;
+
+        if (isNaN(index1) || index1 < 0 || index1 >= characters.length) {
+            console.log('Escolha inválida. Tente novamente.');
+            return selectCharacters();
+        }
+
+        rl.question('Escolha o segundo jogador (1-6):', (answer2) => {
+            let index2 = parseInt(answer2) - 1;
+
+            if (isNaN(index2) || index2 < 0 || index2 >= characters.length || index1 === index2) {
+                console.log('Escolha inválida. Certifique-se de escolher dois personagens diferentes');
+                return selectCharacters();
+            }
+
+            let player1 = characters[index1];
+            let player2 = characters[index2];
+
+            console.log(`\n🏁🚨 Corrida entre ${player1.nome} e ${player2.nome} começando...\n`);
+            
+            (async function main() {
     
-})();
+                await playRaceEngine(player1, player2);
+                await declareWinner(player1, player2);
+                
+            })();
+        });
+    });
+}
+
+selectCharacters();
 
