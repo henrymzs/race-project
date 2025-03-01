@@ -191,10 +191,18 @@ function selectCharacters() {
             console.log(`\n🏁🚨 Corrida entre ${player1.nome} e ${player2.nome} começando...\n`);
             
             (async function main() {
-    
                 await playRaceEngine(player1, player2);
                 await declareWinner(player1, player2);
-                
+
+                rl.question('\n🔄 Deseja jogar novamente? (s/n): ', (answer) => {
+                    if (answer.toLowerCase() === 's') {
+                        console.clear();
+                        selectCharacters();
+                    } else {
+                        console.log('🎮 Obrigado por jogar! Até a próxima!');
+                        rl.close();
+                    }
+                })
             })();
         });
     });
