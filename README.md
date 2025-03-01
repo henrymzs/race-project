@@ -1,13 +1,13 @@
-<h1>Desafio de projeto do Felipão: Mario Kart.JS</h1>
+<h1>Projeto Corrida</h1>
 
   <table>
         <tr>
             <td>
-                <img src="./docs/header.gif" alt="Mario Kart" width="200">
+                <img src="./assets/header.gif" alt="Mario Kart" width="200">
             </td>
             <td>
                 <b>Objetivo:</b>
-                <p>Mario Kart é uma série de jogos de corrida desenvolvida e publicada pela Nintendo. Nosso desafio será criar uma lógica de um jogo de vídeo game para simular corridas de Mario Kart, levando em consideração as regras e mecânicas abaixo.</p>
+                <p>O desafio será criar uma lógica de um jogo de vídeo game para simular corridas de Mario Kart, levando em consideração as regras e mecânicas abaixo.</p>
             </td>
         </tr>
     </table>
@@ -17,7 +17,7 @@
         <tr>
             <td style="border: 1px solid black; text-align: center;">
                 <p>Mario</p>
-                <img src="./docs/mario.gif" alt="Mario Kart" width="60" height="60">
+                <img src="./assets/mario.gif" alt="Mario Kart" width="60" height="60">
             </td>
             <td style="border: 1px solid black; text-align: center;">
                 <p>Velocidade: 4</p>
@@ -26,7 +26,7 @@
             </td>
              <td style="border: 1px solid black; text-align: center;">
                 <p>Peach</p>
-                <img src="./docs/peach.gif" alt="Mario Kart" width="60" height="60">
+                <img src="./assets/peach.gif" alt="Mario Kart" width="60" height="60">
             </td>
             <td style="border: 1px solid black; text-align: center;">
                 <p>Velocidade: 3</p>
@@ -35,7 +35,7 @@
             </td>
               <td style="border: 1px solid black; text-align: center;">
                 <p>Yoshi</p>
-                <img src="./docs/yoshi.gif" alt="Mario Kart" width="60" height="60">
+                <img src="./assets/yoshi.gif" alt="Mario Kart" width="60" height="60">
             </td>
             <td style="border: 1px solid black; text-align: center;">
                 <p>Velocidade: 2</p>
@@ -46,7 +46,7 @@
         <tr>
             <td style="border: 1px solid black; text-align: center;">
                 <p>Bowser</p>
-                <img src="./docs/bowser.gif" alt="Mario Kart" width="60" height="60">
+                <img src="./assets/bowser.gif" alt="Mario Kart" width="60" height="60">
             </td>
             <td style="border: 1px solid black; text-align: center;">
                 <p>Velocidade: 5</p>
@@ -55,7 +55,7 @@
             </td>
             <td style="border: 1px solid black; text-align: center;">
                 <p>Luigi</p>
-                <img src="./docs/luigi.gif" alt="Mario Kart" width="60" height="60">
+                <img src="./assets/luigi.gif" alt="Mario Kart" width="60" height="60">
             </td>
             <td style="border: 1px solid black; text-align: center;">
                 <p>Velocidade: 3</p>
@@ -64,7 +64,7 @@
             </td>
             <td style="border: 1px solid black; text-align: center;">
                 <p>Donkey Kong</p>
-                <img src="./docs/dk.gif" alt="Mario Kart" width="60" height="60">
+                <img src="./assets/dk.gif" alt="Mario Kart" width="60" height="60">
             </td>
             <td style="border: 1px solid black; text-align: center;">
                 <p>Velocidade: 2</p>
